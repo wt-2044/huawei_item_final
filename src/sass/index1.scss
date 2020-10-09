@@ -1,0 +1,386 @@
+@charset "utf-8"; //设置中文字符
+@mixin borderstyle($size:1px, $style:solid, $color:#111) {
+    border: $size $style $color;
+} //边框
+$n:none;
+%ul {
+    list-style: $n;
+    text-decoration: $n;
+}
+
+html,
+body,
+ol,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select,
+div,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 12px;
+    background-color: rgb(247, 249, 255);
+}
+
+// 这里是最上面的导航
+.nav {
+    li {
+        // @extend ul;
+        float: left;
+        height: 36px;
+        line-height: 36px;
+        color: #969494;
+        &:hover .navigation {
+            display: block;
+        }
+        a {
+            text-decoration: $n;
+            color: #afafaf;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+// 这里是上面导航的二级效果
+.two-navigation {
+    position: relative;
+    .navigation {
+        position: absolute;
+        top: 36px;
+        right: 0;
+        background-color: #fff;
+        text-align: center;
+        border-radius: 8px 0 8px 8px;
+        line-height: 24px;
+        display: none;
+        z-index: 99;
+        tr {
+            td {
+                padding: 10px;
+            }
+        }
+    }
+}
+
+//  这里是头部的logo
+.top-log-li {
+    padding: 0;
+    ul {
+        padding-left: 0;
+        height: 24px;
+        margin: 18px 0 15px;
+        font-size: 16px;
+        li {
+            text-align: center;
+            float: left;
+            margin: 0 12px;
+            &:hover .a {
+                color: red;
+                text-decoration: $n;
+            }
+            a {
+                color: #3a3939;
+            }
+        }
+    }
+}
+
+.top-log-in {
+    text-align: center;
+    margin: 18px 0 15px;
+    input {
+        width: 205px;
+        height: 30px;
+        border-radius: 20px;
+        border: 0;
+        background-color: #ececec;
+        color: #918c8c;
+    }
+}
+
+// 这里是头部的logo 部分的二级效果
+.navigation-spfl {
+    position: relative;
+    &:hover .navigation-two {
+        display: block;
+    }
+    .navigation-two {
+        position: absolute;
+        top: 38px;
+        left: -215px;
+        width: 220px;
+        height: 400px;
+        border-radius: 8px 0px 0px 8px;
+        background-color: rgb(233, 229, 229);
+        display: none;
+        z-index: 333;
+        @extend %ul;
+        li {
+            text-align: left;
+            width: 200px;
+            height: 40px;
+            color: #969494;
+            span {
+                float: right;
+            }
+            // 这里里三级效果
+            dl {
+                position: absolute;
+                left: 220px;
+                top: 0;
+                width: 450px;
+                height: 400px;
+                background-color: #fff;
+                border-radius: 0px 8px 8px 0px;
+                dt {
+                    margin: 20px;
+                }
+            }
+        }
+    }
+}
+
+// 这里是banner部分的轮播图
+.banner {
+    @extend %ul;
+    height: 550px;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    // 轮播图片
+    .lunbotu {
+        width: 100%;
+        height: 550px;
+        position: absolute;
+        opacity: 0;
+    }
+    // 轮播图上的圆圈
+    .ol {
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        left: 800px;
+        top: 450px;
+        em {
+            float: left;
+            display: block;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            margin-right: 13px;
+            border: 1px solid;
+            border-radius: 50%;
+            color: #fff;
+            z-index: 333;
+        }
+    }
+}
+
+// 轮播图上的箭头
+.jiantou {
+    width: 100%;
+    position: absolute;
+    top: 200px;
+    .a-1 {
+        #left {
+            width: 80px;
+            height: 80px;
+            display: block;
+            font-size: 50px;
+            color: #fff;
+            background-color: rgba($color: #000000, $alpha: 0.1);
+            text-align: center;
+            line-height: 80px;
+            border-radius: 50%;
+            float: left;
+            margin-left: 210px;
+        }
+        #right {
+            width: 80px;
+            height: 80px;
+            display: block;
+            font-size: 50px;
+            color: #fff;
+            background-color: rgba($color: #000000, $alpha: 0.1);
+            text-align: center;
+            line-height: 80px;
+            border-radius: 50%;
+            float: right;
+        }
+    }
+}
+
+// 轮播图上的列表
+.list-1 {
+    margin: 16px 0;
+    width: 100%;
+    position: absolute;
+    right: 480px;
+    a {
+        font-size: 16px;
+        padding: 12px 16px;
+        display: block;
+        color: #969494;
+        text-decoration: $n;
+        span {
+            float: right;
+        }
+    }
+}
+
+// 这里是banner图上的登录条
+.register {
+    height: 120px;
+    width: 100%;
+    position: absolute;
+    top: 500px;
+    .register-bx {
+        height: 120px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px 0 20px 0;
+        .register-l {
+            border-right: solid 1px #afafaf;
+            height: 88px;
+            text-align: center;
+            .touxiang {
+                border-radius: 50%;
+                display: inline-block;
+                background-color: #dfdfdf;
+                margin-left: 20px;
+                width: 50px;
+                height: 50px;
+            }
+            .denru {
+                line-height: 30px;
+                font-size: 14px;
+                padding: 0;
+            }
+        }
+        .register-z {
+            height: 88px;
+            padding: 0;
+            dl {
+                float: left;
+                margin: 0px 10px;
+            }
+            dd {
+                text-align: center;
+            }
+        }
+        .register-r {
+            border-left: 1px solid #dfdfdf;
+            height: 88px;
+            width: 280px;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+//这里是登录条上的最右边
+.gonggao {
+    float: left;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    .ggx {
+        width: 286px;
+        height: 44px;
+        .ggx-t {
+            float: left;
+            list-style: $n;
+            width: 40px;
+            height: 40px;
+            background-color: green;
+            margin-right: 48px;
+            // margin-top: 10px;
+            a {
+                display: inline-block;
+                width: 50px;
+                height: 15px;
+                text-decoration: $n;
+                margin: 10px 40px;
+            }
+        }
+    }
+}
+
+// 这里是banner下的第一部分列表 
+.index-list {
+    padding: 0;
+    height: 200px;
+    .in-list1 {
+        list-style: $n;
+        a {
+            float: left;
+            margin-left: 10px;
+            img {
+                border-radius: 10px;
+                width: 280px;
+                height: 200px
+            }
+        }
+    }
+}
+
+// 这里是热销单品列表
+// 这是热销单品列表的右边
+.index-list2r {
+    padding: 0;
+    dl {
+        // border: green 1px solid;
+        // padding: 10px;
+        // margin: 2px;
+        // background-color: #ececec;
+        padding: 0 20px;
+        dt {
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    dd {
+        width: 195px;
+        margin-top: 5px;
+        text-align: center;
+    }
+}
+
+// 这里是页面的脚步
+.fot-middle {
+    ul {
+        color: #333;
+        @extend %ul;
+        a {
+            line-height: 22px;
+            color: #777;
+            &:hover {
+                color: red;
+                @extend %ul;
+            }
+        }
+    }
+}
