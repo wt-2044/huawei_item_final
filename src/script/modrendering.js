@@ -11,7 +11,7 @@ define([], function() {
                 let renderinglist = '';
                 $.each(data, function(index, value) {
                     renderinglist += `<li>
-                    <a href="#"><img src="${value.url}" alt=""></a>
+                    <a href="#"><img src="${value.url}" alt="" class="lazy"></a>
                 </li>
                     `;
                 });
@@ -22,39 +22,6 @@ define([], function() {
             })
         }(),
         //2.这里是渲染热销单品的部分
-        // rendering2: ! function() {
-        //     const list = $('.index-list2');
-        //     $.ajax({
-        //         url: 'http://192.168.11.8/js.two/huawei_item/php/huawei_rxdp.php',
-        //         dataType: 'json',
-        //     }).done(function(data) {
-        //         let renderinglist = '';
-        //         $.each(data, function(index, value) {
-        //             renderinglist += `
-        //         <div class="rxdp">
-        //          <dt class=""><a href="#"><img src="${value.url}" alt=""></a></dt>
-        //          <dd><a href="#">${value.model}</a></dd>
-        //          <dd><a href="#">${value.title}</a></dd>
-        //          <dd><a href="#">$${value.price}</a></dd>
-
-        //          </div> 
-
-        //         `;
-        //         });
-        //         list.html(renderinglist);
-        //         $("img.lazy").lazyload({
-        //             effect: "fadeIn" //图片显示方式
-        //         });
-
-
-        //     })
-        // }()
-
-
-
-
-
-
         rendering2: ! function() {
             const listr = $('.index-list2r');
             const listl = $('.index-list2l');
@@ -66,7 +33,7 @@ define([], function() {
 
                 let renderingl = '';
                 renderingl += ` <div div class = "rxdp" >
-                                <dt class=""><a href="#"><img src="${data[0].url}" alt=""></a></dt>
+                                <dt class=""><a href="#"><img src="${data[0].url}" alt="" class="lazy"></a></dt>
                                </div>
                `;
                 listl.html(renderingl);
@@ -81,7 +48,7 @@ define([], function() {
                 // console.log(data1.shift());
                 // console.log(data1);
                 data1.shift();
-                console.log(data1)
+                // console.log(data1)
                 let renderingr = '';
 
                 $.each(data1, function(index, value) {
@@ -89,7 +56,7 @@ define([], function() {
 
                     renderingr += ` 
                 <div class="rxdp">
-                    <dt class=""><a  href="#" class="a1"><img src="${value.url}"      alt=""></a></dt>
+                    <dt class=""><a  href="#" class="a1"><img src="${value.url}"      alt="" class="lazy"></a></dt>
                       <dd><a class="a2" href="#">${value.model}</a></dd>
                       <dd><a class="a3" href="#">${value.title}</a></dd>
                       <dd><a class="a4" href="#">$${value.price}</a></dd>
@@ -109,6 +76,47 @@ define([], function() {
             })
 
         }(),
+        // 3.这里是渲染手机系列的部分
+        rendering2: ! function() {
+            const phonelist = $('.phonelist')
+            $.ajax({
+                url: 'http://192.168.11.8/js.two/huawei_item/php/huawei_item.php',
+                dataType: 'json',
 
+            }).done(function(data) {
+                console.log(data)
+                let phonelist1 = '';
+
+                $.each(data, function(index, value) {
+
+                    phonelist1 += `
+                    <li>
+                <a href="#">
+                <img src="${value.url}" alt=""  class="lazy"> 
+                <div>
+                    <p>${value.model}</p>
+                    <p>${value.title}</p>
+                    <span>￥${value.price}</span>
+                </div></a><li>
+                `;
+                })
+                phonelist.html(phonelist1);
+                $("img.lazy").lazyload({
+                    effect: "fadeIn" //图片显示方式
+                });
+
+
+
+
+            })
+
+
+
+
+
+
+
+
+        }()
     }
 });

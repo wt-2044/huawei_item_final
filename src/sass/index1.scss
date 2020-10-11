@@ -194,6 +194,9 @@ body {
             color: #fff;
             z-index: 333;
         }
+        .active {
+            background-color: #fff;
+        }
     }
 }
 
@@ -237,14 +240,42 @@ body {
     width: 100%;
     position: absolute;
     right: 480px;
-    a {
-        font-size: 16px;
-        padding: 12px 16px;
-        display: block;
-        color: #969494;
-        text-decoration: $n;
-        span {
-            float: right;
+    .list-11 {
+        position: relative;
+        width: 200px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 28px rgba(0, 0, 0, 0.08);
+        a {
+            &:hover dl {
+                display: block;
+            }
+            &:hover .list-11 {
+                border-radius: 10px 0 0 10px;
+            }
+            font-size: 16px;
+            padding: 12px 16px;
+            display: block;
+            color: #969494;
+            text-decoration: $n;
+            span {
+                float: right;
+            }
+            dl {
+                position: absolute;
+                // border: 1px solid;
+                left: 180px;
+                top: 0;
+                width: 450px;
+                height: 460px;
+                background-color: #fff;
+                border-radius: 0px 8px 8px 0px;
+                display: none;
+                dt {
+                    margin: 20px;
+                    float: left;
+                }
+            }
         }
     }
 }
@@ -393,7 +424,7 @@ body {
             width: 220px;
             text-align: center;
             img {
-                padding-top: 35px;
+                padding-top: 25px;
                 margin-bottom: 12px;
                 width: 150px;
                 height: 150px;
@@ -416,8 +447,126 @@ body {
     }
 }
 
-// 这里是页面的脚步
+// 这里是页面中间的轮播
+.modlunbo {
+    position: relative;
+    ul {
+        li {
+            @extend %ul;
+            position: absolute;
+            margin: 10;
+        }
+    }
+    ol {
+        position: absolute;
+        right: 0;
+        top: 90px;
+        li {
+            @extend %ul;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid;
+            float: left;
+            margin: 5px;
+            background-color: #fff;
+        }
+    }
+}
+
+// 手机系列
+//这里是手机系列导航
+.phoneseries {
+    margin: 27px 0 12px;
+    h1 {
+        font-size: 26px;
+        color: #333;
+        line-height: 32px;
+        float: left;
+    }
+    .series {
+        @extend %ul;
+        float: left;
+        margin-left: 28px;
+        height: 32px;
+        font-size: 12px;
+        line-height: 32px;
+        color: #3a3a3a;
+        li {
+            float: left;
+            a {
+                font-size: 14px;
+                color: #999;
+                margin-left: 0;
+                margin-right: 24px;
+                line-height: 32px;
+            }
+        }
+        span {
+            float: right;
+            a {
+                color: #999;
+            }
+        }
+    }
+}
+
+// 这里是手机系列列表
+.phone {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 1300px;
+}
+
+.phonelist {
+    text-align: center;
+    li {
+        margin: 0 0 12px 12px;
+        float: left;
+        background-color: #fdf7f7;
+        @extend %ul;
+        border-radius: 15px;
+    }
+    a {
+        @extend %ul;
+        img {
+            width: 150px;
+            height: 150px;
+            margin: 35px 40px 0 40px;
+        }
+        div {
+            margin: 12px 10px 18px 0;
+            text-align: center;
+            p {
+                margin: 8px 10px;
+                color: #777;
+            }
+            span {
+                color: red;
+            }
+        }
+    }
+}
+
+// 这里是页面的footer
+.fot-top {
+    height: 82px;
+    line-height: 82px;
+    font-size: 18px;
+    border-bottom: 1px solid #cccbcb;
+}
+
 .fot-middle {
+    .fot-middle-l {
+        margin: 24px 0 0 0;
+        border-right: 1px solid #cccbcb;
+    }
+    .fot-middle-r {
+        margin: 24px 0 24px 0;
+        text-align: center;
+    }
     ul {
         color: #333;
         @extend %ul;
@@ -432,4 +581,45 @@ body {
     }
 }
 
-.fot-bottom {}
+.fot-bottom {
+    padding: 25px 0 28px;
+    border-top: 1px solid #cccbcb;
+    .fot-bottom-l {
+        padding: 0;
+        .bot-ll {
+            width: 82px;
+            height: 20px;
+            padding: 3px 20px 0 0;
+        }
+        .bot-r-b {
+            color: #a4a4a4;
+            a {
+                color: #a4a4a4;
+                &:hover {
+                    text-decoration: $n;
+                    color: red;
+                }
+            }
+        }
+        .bot-r {
+            list-style: none;
+            margin: 3px 0 6px;
+            li {
+                float: left;
+                margin-right: 3px;
+                a {
+                    color: #666;
+                    &:hover {
+                        text-decoration: $n;
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+    .fot-bottom-r {
+        a {
+            float: right;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body,
+ol,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select,
+div,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  width: 1200px;
+  margin: 0 auto;
+  border: 1px solid #111;
+}
+
+a {
+  color: #fdfdfd;
+}
+
+.viewwidth {
+  height: 36px;
+  background-color: #000;
+}
+
+.nav {
+  color: #797474;
+}
+.nav a {
+  color: #afafaf;
+}
+.nav .left li {
+  float: left;
+}
+.nav .right li {
+  float: right;
+}
+
+/*# sourceMappingURL=cart.css.map */
