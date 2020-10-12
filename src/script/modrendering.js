@@ -1,5 +1,6 @@
 define([], function() {
     return {
+        // 主页下的渲染
         // 1.这里是渲染banner下的第一部分列表 
         rendering1: ! function() {
             const list = $('.in-list1');
@@ -11,7 +12,7 @@ define([], function() {
                 let renderinglist = '';
                 $.each(data, function(index, value) {
                     renderinglist += `<li>
-                    <a href="#"><img src="${value.url}" alt="" class="lazy"></a>
+                    <a href="#"><img data-original="${value.url}" alt="" class="lazy"></a>
                 </li>
                     `;
                 });
@@ -33,7 +34,7 @@ define([], function() {
 
                 let renderingl = '';
                 renderingl += ` <div div class = "rxdp" >
-                                <dt class=""><a href="#"><img src="${data[0].url}" alt="" class="lazy"></a></dt>
+                                <dt class=""><a href="#"><img data-original="${data[0].url}" alt="" class="lazy"></a></dt>
                                </div>
                `;
                 listl.html(renderingl);
@@ -84,7 +85,7 @@ define([], function() {
                 dataType: 'json',
 
             }).done(function(data) {
-                console.log(data)
+                // console.log(data)
                 let phonelist1 = '';
 
                 $.each(data, function(index, value) {
@@ -92,7 +93,7 @@ define([], function() {
                     phonelist1 += `
                     <li>
                 <a href="#">
-                <img src="${value.url}" alt=""  class="lazy"> 
+                <img data-original="${value.url}" alt=""  class="lazy"> 
                 <div>
                     <p>${value.model}</p>
                     <p>${value.title}</p>
@@ -117,6 +118,37 @@ define([], function() {
 
 
 
+        }(),
+        // 列表页的渲染
+        list_render: ! function() {
+            const detail1 = $('.detail-xr');
+            $.ajax({
+                url: 'http://192.168.11.8/js.two/huawei_item/php/huawei_detail.php',
+                dataType: 'json',
+            }).done(function(data) {
+                console.log(data)
+                let detaildata = '';
+                $.each(data, function(index, value) {
+                    detaildata += `
+                     <div class="sp-detail">
+
+                        <img class="picture lazy" data-original="${value.picture}" alt="">
+                        <p class="model">${value.model}</p>
+                        <b class="price">$${value.price}起</b>
+                        <span class="dkkx"><a href="#">${value.dkkx}</a></span>
+                        <p class="hk"><span class="yzshx">${value.yzshx}</a></span>
+                        <span class="spzq">${value.spzq}</a></span></p>
+                        <?><em <span class=""opinion>${value.opinion}</span>%好评</em>
+                            <em><span class="assess">${value.assess}</span>人评价</em></?>
+                    </div>
+
+                        `;
+                })
+                detail1.html(detaildata);
+                $("img.lazy").lazyload({
+                    effect: "fadeIn" //图片显示方式
+                });
+            })
         }()
     }
 });

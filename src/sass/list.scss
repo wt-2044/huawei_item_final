@@ -1,4 +1,5 @@
 @charset "utf-8"; //设置中文字符
+@import "public";
 @mixin borderstyle($size:1px, $style:solid, $color:#111) {
     border: $size $style $color;
 } //边框
@@ -109,7 +110,6 @@ body {
         z-index: 333;
         @extend %ul;
         li {
-            text-align: left;
             width: 200px;
             height: 40px;
             color: #969494;
@@ -160,26 +160,69 @@ body {
     }
 }
 
-.sp-detail {
-    width: 225px;
-    height: 352px;
-    border: 1px solid;
-    line-height: 15px;
-    margin-right: 9px;
-    p {
-        width: 232px;
-        height: 23px;
-        a {
-            display: block;
-            width: 69px;
-            height: 18px;
+// 这里是渲染的商品
+.detail-xr {
+    @include tanxinghe(row, wrap, flex-start);
+    .sp-detail {
+        width: 225px;
+        height: 352px;
+        line-height: 15px;
+        margin-right: 9px;
+        margin-bottom: 10px;
+        padding: 0 16px;
+        background-color: #fff;
+        .picture {
+            width: 180px;
+            height: 180px;
+            padding-left: 30px;
+            margin: 35px 0 0 0;
         }
-    }
-    img {
-        width: 160px;
-        height: 160px;
-        padding-right: 20px;
-        text-align: center;
+        .model {
+            width: 200px;
+            height: 20px;
+            margin: 8px 0;
+        }
+        .price {
+            color: red;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .dkkx {
+            color: #68beff;
+            border: 1px solid #84c9fd;
+            border-radius: 20px;
+            line-height: 18px;
+            margin: 4px;
+            padding-left: 4px;
+            width: 58px;
+            height: 18px;
+            display: inline-block
+        }
+        .yzshx {
+            display: block;
+            border: red 1px solid;
+            margin: 0 4px 0 0;
+            padding: 0 5px;
+            display: inline-block;
+        }
+        .spzq {
+            display: block;
+            border: red 1px solid;
+            margin: 4px 4px 8px 0;
+            padding: 0 5px;
+            display: inline-block;
+        }
+        .opinion {
+            display: block;
+            font-style: normal;
+            display: inline-block;
+            margin: 8px 0;
+        }
+        .assess {
+            font-style: normal;
+            display: inline-block;
+            margin: 8px 0;
+        }
     }
 }
 

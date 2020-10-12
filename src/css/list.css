@@ -1,3 +1,57 @@
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+b,
+strong {
+  font-weight: normal;
+}
+
+html,
+body,
+ol,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select,
+div,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
 .navigation-spfl .navigation-two, .fot-middle ul, .fot-middle ul a:hover {
   list-style: none;
   text-decoration: none;
@@ -96,7 +150,6 @@ body {
   z-index: 333;
 }
 .navigation-spfl .navigation-two li {
-  text-align: left;
   width: 200px;
   height: 40px;
   color: #969494;
@@ -139,27 +192,72 @@ body {
   padding: 0;
 }
 
-.sp-detail {
+.detail-xr {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.detail-xr .sp-detail {
   width: 225px;
   height: 352px;
-  border: 1px solid;
   line-height: 15px;
   margin-right: 9px;
+  margin-bottom: 10px;
+  padding: 0 16px;
+  background-color: #fff;
 }
-.sp-detail p {
-  width: 232px;
-  height: 23px;
+.detail-xr .sp-detail .picture {
+  width: 180px;
+  height: 180px;
+  padding-left: 30px;
+  margin: 35px 0 0 0;
 }
-.sp-detail p a {
-  display: block;
-  width: 69px;
+.detail-xr .sp-detail .model {
+  width: 200px;
+  height: 20px;
+  margin: 8px 0;
+}
+.detail-xr .sp-detail .price {
+  color: red;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.detail-xr .sp-detail .dkkx {
+  color: #68beff;
+  border: 1px solid #84c9fd;
+  border-radius: 20px;
+  line-height: 18px;
+  margin: 4px;
+  padding-left: 4px;
+  width: 58px;
   height: 18px;
+  display: inline-block;
 }
-.sp-detail img {
-  width: 160px;
-  height: 160px;
-  padding-right: 20px;
-  text-align: center;
+.detail-xr .sp-detail .yzshx {
+  display: block;
+  border: red 1px solid;
+  margin: 0 4px 0 0;
+  padding: 0 5px;
+  display: inline-block;
+}
+.detail-xr .sp-detail .spzq {
+  display: block;
+  border: red 1px solid;
+  margin: 4px 4px 8px 0;
+  padding: 0 5px;
+  display: inline-block;
+}
+.detail-xr .sp-detail .opinion {
+  display: block;
+  font-style: normal;
+  display: inline-block;
+  margin: 8px 0;
+}
+.detail-xr .sp-detail .assess {
+  font-style: normal;
+  display: inline-block;
+  margin: 8px 0;
 }
 
 .fot-top {
@@ -229,4 +327,4 @@ body {
   float: right;
 }
 
-/*# sourceMappingURL=detail.css.map */
+/*# sourceMappingURL=list.css.map */

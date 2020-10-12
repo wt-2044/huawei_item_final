@@ -6,6 +6,16 @@ a {
   text-decoration: none;
 }
 
+em,
+i {
+  font-style: normal;
+}
+
+b,
+strong {
+  font-weight: normal;
+}
+
 html,
 body,
 ol,
@@ -45,7 +55,6 @@ img {
 .center {
   width: 1200px;
   margin: 0 auto;
-  border: 1px solid #111;
 }
 
 a {
@@ -58,16 +67,57 @@ a {
 }
 
 .nav {
+  font-size: 12px;
+  display: flex;
+  flex-direction: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   color: #797474;
+  text-align: center;
+  line-height: 36px;
 }
 .nav a {
   color: #afafaf;
+  padding: 8px;
 }
-.nav .left li {
-  float: left;
+.nav a:hover {
+  color: #fff;
 }
-.nav .right li {
-  float: right;
+.nav a:hover .ai {
+  transform: rotate(-90deg);
+}
+.nav a .ai {
+  display: inline-block;
+  transform: rotate(90deg);
+}
+.nav .nav-l {
+  display: flex;
+  flex-direction: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.nav .nav-r {
+  display: flex;
+  flex-direction: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.navigation {
+  position: relative;
+}
+.navigation .two-navigation {
+  border: 1px solid #111;
+  position: absolute;
+  top: 36px;
+  right: 0;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 8px 0 8px 8px;
+  line-height: 24px;
+}
+.navigation .two-navigation tr {
+  padding: 10px;
 }
 
 /*# sourceMappingURL=cart.css.map */
