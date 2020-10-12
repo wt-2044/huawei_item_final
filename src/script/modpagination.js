@@ -12,22 +12,20 @@ define([], function() {
                 url: 'http://192.168.11.8/js.two/huawei_item/php/huawei_list.php',
                 dataType: 'json',
             }).done(function(data) {
-                console.log(data)
+                console.log(data);
                 let detaildata = '';
                 $.each(data, function(index, value) {
                     detaildata += `
                  <div class="sp-detail">
-
                     <img class="picture lazy" data-original="${value.picture}" alt="">
                     <p class="model">${value.model}</p>
-                    <b class="price">$${value.price}起</b>
+                    <b class="price">￥${value.price}起</b>
                     <span class="dkkx"><a href="#">${value.dkkx}</a></span>
                     <p class="hk"><span class="yzshx">${value.yzshx}</a></span>
                     <span class="spzq">${value.spzq}</a></span></p>
                     <?><em <span class=""opinion>${value.opinion}</span>%好评</em>
                         <em><span class="assess">${value.assess}</span>人评价</em></?>
                 </div>
-
                     `;
                 })
                 detail1.html(detaildata);
@@ -39,16 +37,7 @@ define([], function() {
                 prev = null;
                 next = null;
                 //将页面的li元素加载到两个数组中
-                $('.list li').each(function(index, element) {
-                    array[index] = $(this);
-                    array_default[index] = $(this);
-                });
-                array_default = []; //排序前的li数组
-                array = []; //排序中的数组
-                prev = null;
-                next = null;
-                //将页面的li元素加载到两个数组中
-                $('.list li').each(function(index, element) {
+                $('.sp-detail').each(function(index, element) {
                     array[index] = $(this);
                     array_default[index] = $(this);
                 });
@@ -67,9 +56,9 @@ define([], function() {
                         },
                         dataType: 'json'
                     }).done(function(data) {
-                        let $strhtml = '<ul>';
+                        let detaildata = '';;
                         $.each(data, function(index, value) {
-                            $strhtml += `
+                            detaildata += `
                             <div class="sp-detail">
 
                             <img class="picture lazy" data-original="${value.picture}" alt="">
@@ -83,13 +72,15 @@ define([], function() {
                         </div>
                             `;
                         });
-                        $strhtml += '</ul>';
-                        detail1.html($strhtml);
+                        detail1.html(detaildata);
+                        $("img.lazy").lazyload({
+                            effect: "fadeIn" //图片显示方式
+                        });
                         array_default = []; //排序前的li数组
                         array = []; //排序中的数组
                         prev = null;
                         next = null;
-                        $('.detail-xr .sp-detail').each(function(index, element) {
+                        $('.sp-detail').each(function(index, element) {
                             array[index] = $(this);
                             array_default[index] = $(this);
                         });
@@ -98,9 +89,5 @@ define([], function() {
                 }
             })
         }()
-
-
-
-
     }
 });
