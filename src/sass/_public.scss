@@ -1,4 +1,5 @@
 @charset "utf-8"; //设置中文字符
+// 这里是公用的样式
 @mixin borderstyle($size:1px, $style:solid, $color:#111) {
     border: $size $style $color;
 } //边框
@@ -27,7 +28,6 @@
 }
 
 // 这里是公共值 
-$centre:1200px; //版心宽度
 ul {
     list-style: none;
 }

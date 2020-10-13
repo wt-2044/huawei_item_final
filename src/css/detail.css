@@ -52,7 +52,7 @@ img {
   float: right;
 }
 
-.center {
+.center, .center1 {
   width: 1200px;
   margin: 0 auto;
 }
@@ -237,4 +237,61 @@ body {
   color: #ca141d;
 }
 
-/*# sourceMappingURL=cart.css.map */
+.center1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.goods .tu {
+  position: relative;
+  width: 520px;
+  height: 450px;
+  border: 1px solid #0b0bc4;
+}
+.goods .tu .xf {
+  width: 200px;
+  height: 200px;
+  border: 2px solid red;
+}
+.goods .tu #df {
+  width: 520px;
+  height: 520px;
+  position: absolute;
+  top: 0;
+  left: 520px;
+  border: 3px solid pink;
+}
+.goods #ulist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.goods #ulist #list {
+  width: 450px;
+  height: 68px;
+  border: 1px solid #7e7c79;
+}
+.goods #ulist a {
+  display: inline-block;
+  width: 30px;
+  height: 68px;
+  line-height: 60px;
+  text-align: center;
+  color: #7e7c79;
+  border: 1px solid #111;
+}
+.goods .rjiantou {
+  display: block;
+  transform: rotate(180deg);
+}
+
+.goodsinfo-word {
+  width: 450px;
+  height: 450px;
+  background-color: red;
+}
+
+/*# sourceMappingURL=detail.css.map */

@@ -1,0 +1,172 @@
+// 这里是页面的头部和页脚的样式
+@import "public";
+$centre:1200px; //版心宽度
+.center {
+    width: $centre;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #fbfbfb;
+}
+
+// 这里是头部的导航nav样式
+.viewwidth {
+    height: 36px;
+    background-color: #000;
+}
+
+.nav {
+    font-size: 12px;
+    @include tanxinghe(flex, nowrap, space-between);
+    color: #797474;
+    text-align: center;
+    line-height: 36px;
+    a {
+        color: #afafaf;
+        padding: 8px;
+        &:hover {
+            color: #fff;
+        }
+        &:hover .ai {
+            transform: rotate(-90deg);
+        }
+        .ai {
+            display: inline-block;
+            transform: rotate(90deg);
+        }
+    }
+    .nav-l,
+    .nav-r {
+        @include tanxinghe(flex, nowrap, flex-start);
+        li {
+            &:hover .navig-a {
+                color: red;
+                border: #fff 2px solid;
+                background-color: #fff;
+            }
+            &:hover .two-navigation {
+                display: block;
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+// 这里是二级导航
+.navigation {
+    position: relative;
+    .two-navigation {
+        @include position;
+        top: 36px;
+        right: 0;
+        background-color: #fff;
+        text-align: center;
+        border-radius: 8px 0 8px 8px;
+        line-height: 24px;
+        display: none;
+        tr {
+            padding: 10px;
+        }
+    }
+}
+
+// footer最上面的部分
+.viewwidth1 {
+    background-color: #f9f9f9;
+    width: 100%;
+    min-width: 1200px;
+    // margin-top: 30px;
+}
+
+.footer-top {
+    @include tanxinghe(row, nowrap, space-evenly);
+    font-size: 18px;
+    padding: 22px 0 20px;
+}
+
+// footer底部中间部分
+.footer-middle {
+    @include tanxinghe(row, nowrap, space-between);
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 23px 0 24px;
+    margin: 0 auto;
+    .middle-l {
+        @include tanxinghe(row, nowrap, space-between);
+        width: 920px;
+        height: 155px;
+        padding-top: 5px;
+        border-right: 1px solid #e5e5e5;
+        dt {
+            padding-bottom: 7px;
+        }
+        a {
+            color: #777;
+            font-size: 12px;
+            line-height: 22px;
+            &:hover {
+                color: #ca141d;
+            }
+        }
+    }
+    .middle-r {
+        width: 278px;
+        min-height: 160px;
+        margin-top: 2px;
+        text-align: center;
+        strong {
+            color: #575757;
+            font-size: 24px;
+        }
+        dl>dd>a {
+            color: #575757;
+            font-size: 12px;
+        }
+        .fi {
+            font-size: 40px;
+        }
+    }
+}
+
+// footer下面
+.footer-bottom {
+    padding: 25px 0 28px;
+    @include tanxinghe(row, nowrap, space-between);
+    .bottom-l {
+        img {
+            width: 82px;
+            height: 20px;
+        }
+    }
+    .bottom-m {
+        @include tanxinghe(column, nowrap, flex-start);
+        margin-left: -200px;
+        // 弹性盒的第三个属性不起作用
+        .bot-m-mt {
+            @include tanxinghe(row, nowrap, flex-start);
+            height: 12px;
+            li {
+                margin-left: 3px;
+                a {
+                    color: #777;
+                    padding-left: 6px;
+                    font-size: 12px;
+                    &:hover {
+                        color: #ca141d;
+                    }
+                }
+            }
+        }
+        .bot-m-mb {
+            color: #a4a4a4;
+            font-size: 12px;
+            a {
+                color: #a4a4a4;
+                &:hover {
+                    color: #ca141d;
+                }
+            }
+        }
+    }
+}

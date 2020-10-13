@@ -17,14 +17,16 @@ define([], function() {
                 $.each(data, function(index, value) {
                     detaildata += `
                  <div class="sp-detail">
+                 <a href="http://192.168.11.8/js.two/huawei_item/src/html/detail.html?sid+${value.sid}" target="_blank">
                     <img class="picture lazy" data-original="${value.picture}" alt="">
                     <p class="model">${value.model}</p>
                     <b class="price">￥${value.price}起</b>
                     <span class="dkkx"><a href="#">${value.dkkx}</a></span>
                     <p class="hk"><span class="yzshx">${value.yzshx}</a></span>
                     <span class="spzq">${value.spzq}</a></span></p>
-                    <?><em <span class=""opinion>${value.opinion}</span>%好评</em>
-                        <em><span class="assess">${value.assess}</span>人评价</em></?>
+                <em> <span class=""opinion>${value.opinion}</span>%好评</em>
+                        <em><span class="assess">${value.assess}</span>人评价</em>
+                        </a>
                 </div>
                     `;
                 })
@@ -63,12 +65,12 @@ define([], function() {
 
                             <img class="picture lazy" data-original="${value.picture}" alt="">
                             <p class="model">${value.model}</p>
-                            <b class="price">$${value.price}起</b>
+                            <b class="price">￥${value.price}起</b>
                             <span class="dkkx"><a href="#">${value.dkkx}</a></span>
                             <p class="hk"><span class="yzshx">${value.yzshx}</a></span>
                             <span class="spzq">${value.spzq}</a></span></p>
-                            <?><em <span class=""opinion>${value.opinion}</span>%好评</em>
-                                <em><span class="assess">${value.assess}</span>人评价</em></?>
+                 <em ><span class="opinion">${value.opinion}</span>%好评</em>
+                                <em><span class="assess">${value.assess}</span>人评价</em>
                         </div>
                             `;
                         });
@@ -87,7 +89,55 @@ define([], function() {
                     })
 
                 }
-            })
+            });
+            $('button').eq(0).on('click', function() {
+
+                $.each(array_default, function(index, value) {
+                    detail1.append(value);
+                });
+                return;
+            });
+
+            $('button').eq(1).on('click', function() {
+                for (let i = 0; i < array.length - 1; i++) {
+                    for (let j = 0; j < array.length - i - 1; j++) {
+                        prev = parseFloat(array[j].find('.price').html().substring(1)); //取上个价格
+                        next = parseFloat(array[j + 1].find('.price').html().substring(1)); //下一个的价格
+                        //通过价格的判断，改变的是数组li的位置。
+                        if (prev > next) {
+                            let temp = array[j];
+                            array[j] = array[j + 1];
+                            array[j + 1] = temp;
+                        }
+                    }
+                }
+                // detail1.empty(); //清空原来的列表
+                $.each(array, function(index, value) {
+                    detail1.append(value);
+                });
+            });
+
+            $('button').eq(2).on('click', function() {
+                for (let i = 0; i < array.length - 1; i++) {
+                    for (let j = 0; j < array.length - i - 1; j++) {
+                        prev = parseFloat(array[j].find('.price').html().substring(1)); //取上个价格
+                        next = parseFloat(array[j + 1].find('.price').html().substring(1)); //下一个的价格
+                        //通过价格的判断，改变的是数组li的位置。
+                        if (prev < next) {
+                            let temp = array[j];
+                            array[j] = array[j + 1];
+                            array[j + 1] = temp;
+                        }
+                    }
+                }
+                // detail1.empty(); //清空原来的列表
+                $.each(array, function(index, value) {
+                    detail1.append(value);
+                });
+            });
+
+
+
         }()
     }
 });
