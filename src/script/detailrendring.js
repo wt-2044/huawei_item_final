@@ -18,8 +18,8 @@ define([], function() {
                 },
                 dataType: 'json'
             }).done(function(date) {
-                console.log(date);
-                console.log(date.url);
+                // console.log(date);
+                // console.log(date.url);
                 $xpic.attr('src', date.url);
                 $xpic.attr('sid', date.sid);
                 $dpic.attr('src', date.url);
@@ -30,30 +30,70 @@ define([], function() {
                 var picarr = date.picurl.split(',');
                 var $strhtml = '';
                 $.each(picarr, function(index, value) {
-                    $strhtml += '<li><img src="' + value + '"/>></li>';
+                    $strhtml += '<li><img src="' + value + '"/></li>';
                 });
                 $('#list ul').html($strhtml);
             });
             var $pic = $('#pic');
-            var $xf = $('.xf');
+            var $xf = $('#xf');
+            // console.log($xf);
             var $df = $('#df');
             var $left = $('#left'); //左箭头
             var $right = $('#right'); //右箭头
             var $list = $('#list'); //小图列表
             $xf.width($pic.width() * $df.width() / $dpic.width());
+            $xf.height($pic.height() * $df.height() / $dpic.height());
+            var $bili = $dpic.width() / $pic.width();
+            console.log($bili);
+            $pic.hover(function() {
+                // console.log($pic);
 
-            // $.ajax({
-            //     url: "http://192.168.11.8/js.two/huawei_item/php/huawei_detail.php",
-            //     dateType: 'json',
+                $xf.css('visibility', 'visible');
+                // console.log($xf);
+                $df.css('visibility', 'visible');
+                $(this).on('mousemove', function(ev) {
 
-            // }).done(function(data) {
-            //     console.log(data)
-            //     $.each(data, function(index, value) {
+                    // console.log(this);
+                    var $leftvalue = ev.pageX - $('.goods').offset().left - $xf.width() / 2
+                    var $topvalue = ev.pageY - $('.goods').offset().top - $xf.height() / 2;
+                    console.log($leftvalue);
+                    console.log($topvalue);
+                    if ($leftvalue < 0) {
+                        $leftvalue = 0;
+                    } else if ($leftvalue >= $xpic.width() - $xf.width()) {
+                        $leftvalue = $xpic.width() - $xf.width()
+                    }
+                    if ($topvalue < 0) {
+                        $topvalue = 0;
+                    } else if ($topvalue >= $xpic.height() - $xf.height()) {
+                        $topvalue = $xpic.height() - $xf.height()
+                    }
+                    $xf.css({
+                        left: $leftvalue,
+                        top: $topvalue
+                    });
 
-            //     })
+                    $dpic.css({
+                        left: -$leftvalue * $bili,
+                        top: -$topvalue * $bili
+                    });
+                });
+            }, function() {
+                $xf.css('visibility', 'hidden');
+                $df.css('visibility', 'hidden');
+            });
+            // 小图切换
+            $('#list ul').on('click', 'li', function() {
+                //$(this):当前操作的li
+                let $imgurl = $(this).find('img').attr('src');
+                $xpic.attr('src', $imgurl);
+                $dpic.attr('src', $imgurl);
+            });
 
-            // })
+
+
         }()
 
     }
+
 });

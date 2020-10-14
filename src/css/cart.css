@@ -114,6 +114,7 @@ body {
 }
 .navigation .two-navigation {
   position: absolute;
+  z-index: 123;
   top: 36px;
   right: 0;
   background-color: #fff;

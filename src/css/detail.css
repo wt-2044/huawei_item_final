@@ -114,6 +114,7 @@ body {
 }
 .navigation .two-navigation {
   position: absolute;
+  z-index: 123;
   top: 36px;
   right: 0;
   background-color: #fff;
@@ -244,24 +245,43 @@ body {
   justify-content: flex-start;
 }
 
-.goods .tu {
+.goods {
   position: relative;
   width: 520px;
-  height: 450px;
-  border: 1px solid #0b0bc4;
-}
-.goods .tu .xf {
-  width: 200px;
-  height: 200px;
-  border: 2px solid red;
-}
-.goods .tu #df {
-  width: 520px;
   height: 520px;
+}
+.goods .tu {
+  position: relative;
+}
+.goods .tu #pic {
+  width: 500px;
+  height: 500px;
+}
+.goods .tu #pic #xpic {
+  width: 500px;
+  height: 500px;
+}
+.goods .tu #xf {
+  visibility: hidden;
+  background-color: rgba(253, 196, 9, 0.4);
+  position: absolute;
+  top: 0px;
+}
+.goods #df {
   position: absolute;
   top: 0;
   left: 520px;
-  border: 3px solid pink;
+  border: solid 1px;
+  width: 600px;
+  height: 600px;
+  background-color: #fff;
+  visibility: hidden;
+  overflow: hidden;
+}
+.goods #df #dpic {
+  width: 900px;
+  height: 900px;
+  position: absolute;
 }
 .goods #ulist {
   display: flex;
@@ -272,13 +292,29 @@ body {
 .goods #ulist #list {
   width: 450px;
   height: 68px;
-  border: 1px solid #7e7c79;
+}
+.goods #ulist #list ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 450px;
+  overflow: hidden;
+}
+.goods #ulist #list ul li {
+  margin: 3px 13px 3px;
+}
+.goods #ulist #list ul li img {
+  width: 60px;
+  height: 60px;
 }
 .goods #ulist a {
   display: inline-block;
   width: 30px;
-  height: 68px;
-  line-height: 60px;
+  height: 30px;
+  border-radius: 50%;
+  line-height: 30px;
+  margin-top: 15px;
   text-align: center;
   color: #7e7c79;
   border: 1px solid #111;
@@ -289,9 +325,95 @@ body {
 }
 
 .goodsinfo-word {
-  width: 450px;
-  height: 450px;
-  background-color: red;
+  width: 700px;
+  height: 600px;
+}
+.goodsinfo-word .goodsinfo {
+  margin: 20px 40px;
+}
+.goodsinfo-word .p-name {
+  margin: 10px 0;
+}
+.goodsinfo-word .p-name a {
+  color: #3a3a3a;
+}
+.goodsinfo-word .p-price {
+  width: 600px;
+  height: 200px;
+  padding-top: 20px;
+  background: #f5f5f5;
+}
+.goodsinfo-word .p-price strong {
+  margin: 10px 10px 0 0;
+  color: #3a3a3a;
+}
+.goodsinfo-word .p-price strong em {
+  margin-left: 20px;
+  color: #ca141d;
+}
+.goodsinfo-word .p-price strong .loadpcp {
+  color: #ca141d;
+  font-size: 20px;
+}
+.goodsinfo-word .cx {
+  margin: 10px 0;
+}
+.goodsinfo-word .cx a {
+  text-align: center;
+  display: inline-block;
+  margin: 10px 0 0 85px;
+  width: 100px;
+  height: 20px;
+  color: red;
+  border: red 1px solid;
+}
+.goodsinfo-word .p-btn {
+  margin-top: 170px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.goodsinfo-word .p-btn .sl {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.goodsinfo-word .p-btn .sl #count {
+  width: 50px;
+  height: 50px;
+  border: #7e7c79 1px solid;
+  border-right: 0;
+  text-align: center;
+}
+.goodsinfo-word .p-btn .sl bottom {
+  width: 20px;
+  height: 50px;
+  border: 1px solid #7e7c79;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.goodsinfo-word .p-btn .sl bottom a {
+  color: #7e7c79;
+}
+.goodsinfo-word .p-btn .xd,
+.goodsinfo-word .p-btn .jg {
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  margin-left: 30px;
+  color: #fff;
+}
+.goodsinfo-word .p-btn .xd {
+  background-color: orangered;
+}
+.goodsinfo-word .p-btn .jg {
+  background-color: orange;
 }
 
 /*# sourceMappingURL=detail.css.map */

@@ -1,4 +1,244 @@
-.navigation-spfl .navigation-two, .banner, .modlunbo ul li, .modlunbo ol li, .phoneseries .series, .phonelist li, .phonelist a, .fot-middle ul, .fot-middle ul a:hover {
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+b,
+strong {
+  font-weight: normal;
+}
+
+html,
+body,
+ol,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select,
+div,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #fbfbfb;
+}
+
+.viewwidth {
+  height: 36px;
+  background-color: #000;
+}
+
+.nav {
+  font-size: 12px;
+  display: flex;
+  flex-direction: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  color: #797474;
+  text-align: center;
+  line-height: 36px;
+}
+.nav a {
+  color: #afafaf;
+  padding: 8px;
+}
+.nav a:hover {
+  color: #fff;
+}
+.nav a:hover .ai {
+  transform: rotate(-90deg);
+}
+.nav a .ai {
+  display: inline-block;
+  transform: rotate(90deg);
+}
+.nav .nav-l,
+.nav .nav-r {
+  display: flex;
+  flex-direction: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.nav .nav-l li:hover .navig-a,
+.nav .nav-r li:hover .navig-a {
+  color: red;
+  border: #fff 2px solid;
+  background-color: #fff;
+}
+.nav .nav-l li:hover .two-navigation,
+.nav .nav-r li:hover .two-navigation {
+  display: block;
+  background-color: #fff;
+}
+
+.navigation {
+  position: relative;
+}
+.navigation .two-navigation {
+  position: absolute;
+  z-index: 123;
+  top: 36px;
+  right: 0;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 8px 0 8px 8px;
+  line-height: 24px;
+  display: none;
+}
+.navigation .two-navigation tr {
+  padding: 10px;
+}
+
+.viewwidth1 {
+  background-color: #f9f9f9;
+  width: 100%;
+  min-width: 1200px;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  font-size: 18px;
+  padding: 22px 0 20px;
+}
+
+.footer-middle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 23px 0 24px;
+  margin: 0 auto;
+}
+.footer-middle .middle-l {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 920px;
+  height: 155px;
+  padding-top: 5px;
+  border-right: 1px solid #e5e5e5;
+}
+.footer-middle .middle-l dt {
+  padding-bottom: 7px;
+}
+.footer-middle .middle-l a {
+  color: #777;
+  font-size: 12px;
+  line-height: 22px;
+}
+.footer-middle .middle-l a:hover {
+  color: #ca141d;
+}
+.footer-middle .middle-r {
+  width: 278px;
+  min-height: 160px;
+  margin-top: 2px;
+  text-align: center;
+}
+.footer-middle .middle-r strong {
+  color: #575757;
+  font-size: 24px;
+}
+.footer-middle .middle-r dl > dd > a {
+  color: #575757;
+  font-size: 12px;
+}
+.footer-middle .middle-r .fi {
+  font-size: 40px;
+}
+
+.footer-bottom {
+  padding: 25px 0 28px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.footer-bottom .bottom-l img {
+  width: 82px;
+  height: 20px;
+}
+.footer-bottom .bottom-m {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin-left: -200px;
+}
+.footer-bottom .bottom-m .bot-m-mt {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  height: 12px;
+}
+.footer-bottom .bottom-m .bot-m-mt li {
+  margin-left: 3px;
+}
+.footer-bottom .bottom-m .bot-m-mt li a {
+  color: #777;
+  padding-left: 6px;
+  font-size: 12px;
+}
+.footer-bottom .bottom-m .bot-m-mt li a:hover {
+  color: #ca141d;
+}
+.footer-bottom .bottom-m .bot-m-mb {
+  color: #a4a4a4;
+  font-size: 12px;
+}
+.footer-bottom .bottom-m .bot-m-mb a {
+  color: #a4a4a4;
+}
+.footer-bottom .bottom-m .bot-m-mb a:hover {
+  color: #ca141d;
+}
+
+.navigation-spfl .navigation-two, .banner, .modlunbo ul li, .modlunbo ol li, .phoneseries .series, .phonelist li, .phonelist a {
   list-style: none;
   text-decoration: none;
 }
@@ -34,41 +274,6 @@ img {
 body {
   font-size: 12px;
   background-color: #f7f9ff;
-}
-
-.nav li {
-  float: left;
-  height: 36px;
-  line-height: 36px;
-  color: #969494;
-}
-.nav li:hover .navigation {
-  display: block;
-}
-.nav li a {
-  text-decoration: none;
-  color: #afafaf;
-}
-.nav li a:hover {
-  color: #fff;
-}
-
-.two-navigation {
-  position: relative;
-}
-.two-navigation .navigation {
-  position: absolute;
-  top: 36px;
-  right: 0;
-  background-color: #fff;
-  text-align: center;
-  border-radius: 8px 0 8px 8px;
-  line-height: 24px;
-  display: none;
-  z-index: 99;
-}
-.two-navigation .navigation tr td {
-  padding: 10px;
 }
 
 .top-log-li {
@@ -503,73 +708,6 @@ body {
 }
 .phonelist a div span {
   color: red;
-}
-
-.fot-top {
-  height: 82px;
-  line-height: 82px;
-  font-size: 18px;
-  border-bottom: 1px solid #cccbcb;
-}
-
-.fot-middle .fot-middle-l {
-  margin: 24px 0 0 0;
-  border-right: 1px solid #cccbcb;
-}
-.fot-middle .fot-middle-r {
-  margin: 24px 0 24px 0;
-  text-align: center;
-}
-.fot-middle ul {
-  color: #333;
-}
-.fot-middle ul a {
-  line-height: 22px;
-  color: #777;
-}
-.fot-middle ul a:hover {
-  color: red;
-}
-
-.fot-bottom {
-  padding: 25px 0 28px;
-  border-top: 1px solid #cccbcb;
-}
-.fot-bottom .fot-bottom-l {
-  padding: 0;
-}
-.fot-bottom .fot-bottom-l .bot-ll {
-  width: 82px;
-  height: 20px;
-  padding: 3px 20px 0 0;
-}
-.fot-bottom .fot-bottom-l .bot-r-b {
-  color: #a4a4a4;
-}
-.fot-bottom .fot-bottom-l .bot-r-b a {
-  color: #a4a4a4;
-}
-.fot-bottom .fot-bottom-l .bot-r-b a:hover {
-  text-decoration: none;
-  color: red;
-}
-.fot-bottom .fot-bottom-l .bot-r {
-  list-style: none;
-  margin: 3px 0 6px;
-}
-.fot-bottom .fot-bottom-l .bot-r li {
-  float: left;
-  margin-right: 3px;
-}
-.fot-bottom .fot-bottom-l .bot-r li a {
-  color: #666;
-}
-.fot-bottom .fot-bottom-l .bot-r li a:hover {
-  text-decoration: none;
-  color: red;
-}
-.fot-bottom .fot-bottom-r a {
-  float: right;
 }
 
 /*# sourceMappingURL=index1.css.map */

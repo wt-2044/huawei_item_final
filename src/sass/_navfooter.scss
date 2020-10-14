@@ -58,6 +58,7 @@ body {
     position: relative;
     .two-navigation {
         @include position;
+        z-index: 123;
         top: 36px;
         right: 0;
         background-color: #fff;
