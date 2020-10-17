@@ -1,5 +1,5 @@
 @charset "utf-8"; //设置中文字符
-@import "public";
+@import "navfooter";
 @mixin borderstyle($size:1px, $style:solid, $color:#111) {
     border: $size $style $color;
 } //边框

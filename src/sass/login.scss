@@ -1,0 +1,35 @@
+@import "navfooter";
+#viewwidth2 {
+    height: 36px;
+    width: 100%;
+    background-color: #dddcdc;
+}
+
+.center1 {
+    width: 1200px;
+    margin: 0 auto;
+    line-height: 36px;
+    @include tanxinghe(row, nowrap, flex-start);
+}
+
+.kuan {
+    width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    @include tanxinghe(row, nowrap, space-evenly);
+    align-items: center;
+}
+
+.login {
+    @include tanxinghe(column, nowrap, space-evenly);
+    // border: solid 1px red;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    text-align: center;
+    input {
+        border-radius: 5px;
+        border: 0;
+        background-color: #dddcdc;
+    }
+}

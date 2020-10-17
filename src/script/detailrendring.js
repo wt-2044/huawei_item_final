@@ -12,14 +12,12 @@ define([], function() {
                 $sid = 1
             }
             $.ajax({
-                url: 'http://192.168.11.8/js.two/huawei_item/php/getsid.php',
+                url: 'http://10.31.163.208/js.two/huawei_item/php/getsid.php',
                 data: {
                     sid: $sid
                 },
                 dataType: 'json'
             }).done(function(date) {
-                // console.log(date);
-                // console.log(date.url);
                 $xpic.attr('src', date.url);
                 $xpic.attr('sid', date.sid);
                 $dpic.attr('src', date.url);
@@ -34,6 +32,7 @@ define([], function() {
                 });
                 $('#list ul').html($strhtml);
             });
+            //放大镜效果
             var $pic = $('#pic');
             var $xf = $('#xf');
             // console.log($xf);
@@ -44,7 +43,7 @@ define([], function() {
             $xf.width($pic.width() * $df.width() / $dpic.width());
             $xf.height($pic.height() * $df.height() / $dpic.height());
             var $bili = $dpic.width() / $pic.width();
-            console.log($bili);
+            // console.log($bili);
             $pic.hover(function() {
                 // console.log($pic);
 
@@ -56,8 +55,8 @@ define([], function() {
                     // console.log(this);
                     var $leftvalue = ev.pageX - $('.goods').offset().left - $xf.width() / 2
                     var $topvalue = ev.pageY - $('.goods').offset().top - $xf.height() / 2;
-                    console.log($leftvalue);
-                    console.log($topvalue);
+                    // console.log($leftvalue);
+                    // console.log($topvalue);
                     if ($leftvalue < 0) {
                         $leftvalue = 0;
                     } else if ($leftvalue >= $xpic.width() - $xf.width()) {
@@ -82,12 +81,53 @@ define([], function() {
                 $xf.css('visibility', 'hidden');
                 $df.css('visibility', 'hidden');
             });
+
+
+
+
             // 小图切换
             $('#list ul').on('click', 'li', function() {
+                // console.log(1)
                 //$(this):当前操作的li
                 let $imgurl = $(this).find('img').attr('src');
+                console.log($imgurl)
                 $xpic.attr('src', $imgurl);
                 $dpic.attr('src', $imgurl);
+            });
+
+
+            // var $left = $('#left'); //左箭头
+            // var $right = $('#right'); //右箭头
+            // var $list = $('#list'); //小图列表
+            var $num = 5;
+            $right.on('click', function() {
+                console.log(1)
+                let $lists = $('#list ul li');
+                console.log($lists.size())
+                if ($lists.size() > $num) { //限制点击的条件
+                    console.log($lists)
+                    $num++;
+                    $left.css('color', '#333');
+                    if ($lists.size() == $num) {
+                        $right.css('color', 'red');
+                    }
+                    $('#list ul').animate({
+                        left: -($num - 5) * $lists.eq(0).outerWidth(true)
+                    });
+                }
+            });
+            $left.on('click', function() {
+                let $lists = $('#list ul li');
+                if ($num > 5) { //限制点击的条件
+                    $num--;
+                    $right.css('color', '#333');
+                    if ($num <= 5) {
+                        $left.css('color', 'red');
+                    }
+                    $('#list ul').animate({
+                        left: -($num - 5) * $lists.eq(0).outerWidth(true)
+                    });
+                }
             });
 
 

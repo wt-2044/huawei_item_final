@@ -9,25 +9,26 @@ define([], function() {
             const detail1 = $('.detail-xr');
 
             $.ajax({
-                url: 'http://192.168.11.8/js.two/huawei_item/php/huawei_list.php',
+                url: 'http://10.31.163.208//js.two/huawei_item/php/huawei_list.php',
                 dataType: 'json',
             }).done(function(data) {
                 console.log(data);
                 let detaildata = '';
                 $.each(data, function(index, value) {
                     detaildata += `
-                 <div class="sp-detail">
-                 <a href="http://192.168.11.8/js.two/huawei_item/src/html/detail.html?sid+${value.sid}" target="_blank">
-                    <img class="picture lazy" data-original="${value.picture}" alt="">
-                    <p class="model">${value.model}</p>
-                    <b class="price">￥${value.price}起</b>
-                    <span class="dkkx"><a href="#">${value.dkkx}</a></span>
-                    <p class="hk"><span class="yzshx">${value.yzshx}</a></span>
-                    <span class="spzq">${value.spzq}</a></span></p>
+                 
+        <div class="sp-detail">
+                 <a href="http://10.31.163.208//js.two/huawei_item/src/html/detail.html?sid=${value.sid}" target="_blank">
+                <img class="picture lazy" data-original="${value.picture}" alt="">
+                <p class="model">${value.model}</p>
+                <b class="price">￥${value.price}起</b>
+                <span class="dkkx"><a href="#">${value.dkkx}</a></span>
+                <p class="hk"><span class="yzshx">${value.yzshx}</a></span>
+                <span class="spzq">${value.spzq}</a></span></p>
                 <em> <span class=""opinion>${value.opinion}</span>%好评</em>
-                        <em><span class="assess">${value.assess}</span>人评价</em>
-                        </a>
-                </div>
+                <em><span class="assess">${value.assess}</span>人评价</em>
+                </a>
+        </div>
                     `;
                 })
                 detail1.html(detaildata);
@@ -52,7 +53,7 @@ define([], function() {
                 callback: function(api) {
                     console.log(api.getCurrent());
                     $.ajax({
-                        url: 'http://192.168.11.8/js.two/huawei_item/php/huawei_list.php',
+                        url: 'http://10.31.163.208//js.two/huawei_item/php/huawei_list.php',
                         data: {
                             page: api.getCurrent() //传输数据
                         },
@@ -62,7 +63,7 @@ define([], function() {
                         $.each(data, function(index, value) {
                             detaildata += `
                             <div class="sp-detail">
-
+<a herf="http://10.31.163.208/js.two/huawei_item/src/html/detail.html?sid=${value.sid}"
                             <img class="picture lazy" data-original="${value.picture}" alt="">
                             <p class="model">${value.model}</p>
                             <b class="price">￥${value.price}起</b>

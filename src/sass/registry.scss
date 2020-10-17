@@ -1,0 +1,22 @@
+@import "navfooter";
+#zc {
+    width: 1200px;
+    margin: 0 auto;
+    height: 600px;
+    @include tanxinghe(column, nowrap, center);
+    form {
+        width: 600px;
+        height: 600px;
+        @include tanxinghe(column, nowrap, space-evenly);
+        align-items: center;
+        margin: 0 auto;
+        input {
+            border: 0;
+            background-color: #dddddd;
+            width: 300px;
+            height: 40px;
+            border-radius: 5px;
+            text-indent: 14px;
+        }
+    }
+}

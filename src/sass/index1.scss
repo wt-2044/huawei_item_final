@@ -57,7 +57,6 @@ body {
         background-color: rgb(233, 229, 229);
         display: none;
         z-index: 333;
-        @extend %ul;
         li {
             text-align: left;
             width: 200px;
@@ -85,7 +84,6 @@ body {
 
 // 这里是banner部分的轮播图
 .banner {
-    @extend %ul;
     height: 550px;
     width: 100%;
     padding: 0;
@@ -374,7 +372,6 @@ body {
     position: relative;
     ul {
         li {
-            @extend %ul;
             position: absolute;
             margin: 10;
         }
@@ -384,7 +381,6 @@ body {
         right: 0;
         top: 90px;
         li {
-            @extend %ul;
             width: 20px;
             height: 20px;
             border-radius: 50%;
@@ -407,7 +403,6 @@ body {
         float: left;
     }
     .series {
-        @extend %ul;
         float: left;
         margin-left: 28px;
         height: 32px;
@@ -448,11 +443,9 @@ body {
         margin: 0 0 12px 12px;
         float: left;
         background-color: #fdf7f7;
-        @extend %ul;
         border-radius: 15px;
     }
     a {
-        @extend %ul;
         img {
             width: 150px;
             height: 150px;

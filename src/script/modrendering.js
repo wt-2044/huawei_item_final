@@ -5,10 +5,10 @@ define([], function() {
         rendering1: ! function() {
             const list = $('.in-list1');
             $.ajax({
-                url: 'http://192.168.11.8/js.two/huawei_item/php/huawei_four.php',
+                url: 'http://10.31.163.208//js.two/huawei_item/php/huawei_four.php',
                 dataType: 'json',
             }).done(function(data) {
-                // console.log(data);
+
                 let renderinglist = '';
                 $.each(data, function(index, value) {
                     renderinglist += `<li>
@@ -28,7 +28,7 @@ define([], function() {
             const listl = $('.index-list2l');
             const list = $('.index-list2')
             $.ajax({
-                url: 'http://192.168.11.8/js.two/huawei_item/php/huawei_rxdp.php',
+                url: 'http://10.31.163.208//js.two/huawei_item/php/huawei_rxdp.php',
                 dataType: 'json',
             }).done(function(data) {
 
@@ -45,15 +45,12 @@ define([], function() {
                     data1.push(value);
 
                 });
-                // console.log(data1);
-                // console.log(data1.shift());
-                // console.log(data1);
+
                 data1.shift();
-                // console.log(data1)
+
                 let renderingr = '';
 
                 $.each(data1, function(index, value) {
-                    // console.log(value);
 
                     renderingr += ` 
                 <div class="rxdp">
@@ -81,11 +78,11 @@ define([], function() {
         rendering2: ! function() {
             const phonelist = $('.phonelist')
             $.ajax({
-                url: 'http://192.168.11.8/js.two/huawei_item/php/huawei_item.php',
+                url: 'http://10.31.163.208//js.two/huawei_item/php/huawei_item.php',
                 dataType: 'json',
 
             }).done(function(data) {
-                // console.log(data)
+
                 let phonelist1 = '';
 
                 $.each(data, function(index, value) {
@@ -119,36 +116,6 @@ define([], function() {
 
 
         }(),
-        // 列表页的渲染
-        // list_render: ! function() {
-        //     const detail1 = $('.detail-xr');
-        //     $.ajax({
-        //         url: 'http://192.168.11.8/js.two/huawei_item/php/huawei_detail.php',
-        //         dataType: 'json',
-        //     }).done(function(data) {
-        //         console.log(data)
-        //         let detaildata = '';
-        //         $.each(data, function(index, value) {
-        //             detaildata += `
-        //              <div class="sp-detail">
 
-        //                 <img class="picture lazy" data-original="${value.picture}" alt="">
-        //                 <p class="model">${value.model}</p>
-        //                 <b class="price">$${value.price}起</b>
-        //                 <span class="dkkx"><a href="#">${value.dkkx}</a></span>
-        //                 <p class="hk"><span class="yzshx">${value.yzshx}</a></span>
-        //                 <span class="spzq">${value.spzq}</a></span></p>
-        //                 <?><em <span class=""opinion>${value.opinion}</span>%好评</em>
-        //                     <em><span class="assess">${value.assess}</span>人评价</em></?>
-        //             </div>
-
-        //                 `;
-        //         })
-        //         detail1.html(detaildata);
-        //         $("img.lazy").lazyload({
-        //             effect: "fadeIn" //图片显示方式
-        //         });
-        //     })
-        // }()
     }
 });

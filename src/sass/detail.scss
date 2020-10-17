@@ -47,12 +47,20 @@
         #list {
             width: 450px;
             height: 68px;
+            position: relative;
+            border: solid 1px;
+            overflow: hidden;
             ul {
                 @include tanxinghe(row, nowrap, space-between);
-                width: 450px;
-                overflow: hidden;
+                // width: 450px;
+                height: 60px;
+                position: absolute;
+                border: blueviolet 1px solid;
+                // overflow: hidden;
                 li {
-                    margin: 3px 13px 3px;
+                    height: 60px;
+                    border: solid 1px red;
+                    margin: 3px 15px 3px;
                     img {
                         width: 60px;
                         height: 60px;
